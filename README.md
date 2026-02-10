@@ -142,9 +142,33 @@ Finally, both are done:
 
 <img width="1919" height="796" alt="Image" src="https://github.com/user-attachments/assets/cb0643d5-d22e-4847-acf0-6e264dd8e030" />
 
+```bash
+aws sts get-caller-identity
 
+aws eks update-kubeconfig --region us-east-2 --name eksvilas
+```
 
+Updating the kubeconfig is very important other we would not be able to access the cluster
 
+<img width="1116" height="449" alt="Image" src="https://github.com/user-attachments/assets/4d1dad83-d532-4f1b-a86d-d651e34db4a8" />
+
+We clone the repo which contains all the necessary codes and manifests to make the application live
+```bash
+git clone https://github.com/NayanJyotiKalita/shopping_site_EKS_along_AI-ML_integration.git
+```
+
+Now we run this script: [build-and-push.sh](build-and-push.sh) which logs into ECR, builds the images of the respective services (ui, catalog, cart, checkout, orders) present inside the [src](src/) directory, tags them and pushes them into ECR. But before we start building, we will need the docker as the image building is done using Dockerfile. 
+
+```bash
+sudo apt install docker -y
+or
+yum install docker -y
+
+# Start the docker service
+sudo systemctl start docker
+
+./build-and-push.sh
+```
 
 
 
