@@ -248,6 +248,7 @@ And we have our Bedrock Log Analyzer Ready to query the EKS Cluster(s):
 
 Logging was disabled by default, after enabling we can now see the logs:
 
+<img width="831" height="919" alt="Screenshot 2026-02-10 232703" src="https://github.com/user-attachments/assets/bdfcf273-267a-498f-8714-4668da9663bd" />
 
 
 
